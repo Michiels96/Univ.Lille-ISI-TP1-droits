@@ -56,13 +56,34 @@ On remarque que les ID de groupe EGID et RGID n'ont pas changé, toto à toujour
 
 Réponse
 
+Le résultat de la commande **python3 suid.py** est:
+
+```
+- EUID : 1001
+- EGID : 1000
+```
+
+Les valeurs de EUID est donc 1001, l'id de l'utilisateur toto et la valeur de EGID est 1000, la valeur de l'utilisateur ubuntu.
+
 ## Question 5
 
 Réponse
 
+**chfn** permet de modifier le nom et les informations associées à un utilisateur particuliers.
+Le résultat de la commande *ls -al /usr/bin/chfn* est le suivant
+
+```
+-rwsr-xr-x 1 root root 85064 mai   28  2020 /usr/bin/chfn
+```
+
+Les information opn bien été mise a jour:
+```
+toto:x:1001:1000:,2,4012,6012:/home/toto:/bin/bash 
+``` 
 ## Question 6
 
 Réponse
+Le fichier /etc/passwd ne contient aucuns mot de passes car déjà stocker des mots de passes dans un fichiers qui s'appelle passwd, et qui réunis tous les mots de passes serais relativement idiot. Les mots de passes sont stcoké dans des fichiers crypté dans le chemin est donnée dans ce fichier. Par exemple le mot de passe pour l'utilisateur toto est stocké en crypté dans /home/toto:/bin/bash.  L'avantage d'une telle méthjode et que cela permet d'augmenter le nombre de fichier a décrypter en cas d'attaque....a mon avis.
 
 ## Question 7
 
