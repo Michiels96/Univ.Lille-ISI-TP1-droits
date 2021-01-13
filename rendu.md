@@ -24,10 +24,33 @@ d????????? ? ? ? ?              ? .
 d????????? ? ? ? ?              ? ..
 -????????? ? ? ? ?              ? data.txt
 ```
+L'utilisateur toto n'a que très peu d'information sur le contenue du fichier. Il sait juste que à l'intérieur il y a le ficier data.txt. Il ne peut pas avoir plus d'information car la commande lancer par toto ne peut pas entrer dans le dossier pour récupérer les informations manquantes.
 
 ## Question 3
 
-Réponse
+Voice le resultat de la commande suid sans avoir activer le flag set-user-id.
+
+```
+Affichage des id du programme
+- EUID : 1001
+- EGID : 1000
+- RUID : 1001
+- RGID : 1000
+Cannot open file on read mode: Permission denied
+```
+On vois que EUID et RUID ont la même valeur *(1001 qui correspond à l'utilisateur toto)* et EGID et RGID ont aussi la même valeur *(1000 qui correspond au groupe ubuntu)*
+
+Voici le résultat de la commande après avoir activer le flag set-user-id
+
+```
+Affichage des id du programme
+- EUID : 1000
+- EGID : 1000
+- RUID : 1001
+- RGID : 1000
+File open correctly on read mode
+```
+On remarque que les ID de groupe EGID et RGID n'ont pas changé, toto à toujours un RUID a 1001. Ce qui change c'est que maintenant, le EUID correspond non plus à celui de toto mais à celui d'ubuntu. Le programme vas donc s'executer en faisant croire qu'il à les même permission que l'utilisateur ubuntu. Comme ubuntu peut lire le fichier data.txt, le programme vas donc pouvoir lire le fichier data.txt sans problème.
 
 ## Question 4
 
