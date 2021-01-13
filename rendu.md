@@ -2,9 +2,9 @@
 
 ## Binome
 
-- Nom, Prénom, email: ___
+- Michiels Pierre 
 
-- Nom, Prénom, email: ___
+- Saulquin Clément clement.saulq1@gmail.com
 
 ## Question 1
 
@@ -12,7 +12,18 @@ Réponse
 
 ## Question 2
 
-Réponse
+Réponse: L'utilisateur toto n'a pas pu entrer dans le dossier mydir. En effet, nous avons retirer la permission 'x' à ce fichier pour tous les membre du groupe ubuntu. On peut donc déduire que la permission 'x' sur un dossier ne sert pas à exécuter le dossier mais permet de dire si on peut rentrer dedans.
+Quand on lance la commande **ls -al mydir** voilà le resultat obtenue.
+
+```
+ls: impossible d'accéder à 'mydir/..': Permission non accordée
+ls: impossible d'accéder à 'mydir/.': Permission non accordée
+ls: impossible d'accéder à 'mydir/data.txt': Permission non accordée
+total 0
+d????????? ? ? ? ?              ? .
+d????????? ? ? ? ?              ? ..
+-????????? ? ? ? ?              ? data.txt
+```
 
 ## Question 3
 
