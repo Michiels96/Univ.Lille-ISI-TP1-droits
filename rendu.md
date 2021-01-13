@@ -2,13 +2,17 @@
 
 ## Binome
 
-- Michiels Pierre 
+- Michiels Pierre pierre.michiels.etu@univ-lille.fr
 
 - Saulquin Clément clement.saulq1@gmail.com
 
 ## Question 1
 
-Réponse
+Réponse:
+Non il ne peut pas écrire car lors de l'exécution du processus lancé par toto, l'EUID du processus est comparé avec l'id
+de l'utilisateur 'toto' et comme ce sont les mêmes id, on va prendre le triplet des droits du fichier 'titi.txt' (=> 'r--')
+Les droits du fichier titi.txt ne permettent pas à l'utilisateur toto d'écrire ('w').
+Il est dès lors pas possible pour le processus d'écrire dans le fichier 'titi.txt'.
 
 ## Question 2
 
@@ -24,9 +28,14 @@ d????????? ? ? ? ?              ? .
 d????????? ? ? ? ?              ? ..
 -????????? ? ? ? ?              ? data.txt
 ```
-L'utilisateur toto n'a que très peu d'information sur le contenue du fichier. Il sait juste que à l'intérieur il y a le ficier data.txt. Il ne peut pas avoir plus d'information car la commande lancer par toto ne peut pas entrer dans le dossier pour récupérer les informations manquantes.
+L'utilisateur toto n'a que très peu d'information sur le contenu du fichier. 
+Il sait juste que à l'intérieur il y a le fichier data.txt. 
+Il ne peut pas avoir plus d'information car la commande lancée par toto 
+ne peut pas entrer dans le dossier pour récupérer les informations manquantes.
 
 ## Question 3
+
+Réponse:
 
 Voice le resultat de la commande suid sans avoir activer le flag set-user-id.
 
@@ -50,11 +59,14 @@ Affichage des id du programme
 - RGID : 1000
 File open correctly on read mode
 ```
-On remarque que les ID de groupe EGID et RGID n'ont pas changé, toto à toujours un RUID a 1001. Ce qui change c'est que maintenant, le EUID correspond non plus à celui de toto mais à celui d'ubuntu. Le programme vas donc s'executer en faisant croire qu'il à les même permission que l'utilisateur ubuntu. Comme ubuntu peut lire le fichier data.txt, le programme vas donc pouvoir lire le fichier data.txt sans problème.
+On remarque que les ID de groupe EGID et RGID n'ont pas changé, toto à toujours un RUID a 1001. 
+Ce qui change c'est que maintenant, le EUID correspond non plus à celui de toto mais à celui d'ubuntu. 
+Le programme vas donc s'executer en faisant croire qu'il à les même permission que l'utilisateur ubuntu. 
+Comme ubuntu peut lire le fichier data.txt, le programme va donc pouvoir lire le fichier data.txt sans problème.
 
 ## Question 4
 
-Réponse
+Réponse:
 
 Le résultat de la commande **python3 suid.py** est:
 
@@ -63,27 +75,35 @@ Le résultat de la commande **python3 suid.py** est:
 - EGID : 1000
 ```
 
-Les valeurs de EUID est donc 1001, l'id de l'utilisateur toto et la valeur de EGID est 1000, la valeur de l'utilisateur ubuntu.
+Les valeurs de EUID est donc 1001, l'id de l'utilisateur toto et la valeur de EGID est 1000, 
+la valeur de l'utilisateur ubuntu.
 
 ## Question 5
 
-Réponse
+Réponse:
 
-**chfn** permet de modifier le nom et les informations associées à un utilisateur particuliers.
-Le résultat de la commande *ls -al /usr/bin/chfn* est le suivant
+**chfn** permet de modifier le nom et les informations associées à un utilisateur particulier.
+Le résultat de la commande *ls -al /usr/bin/chfn* est le suivant:
 
 ```
 -rwsr-xr-x 1 root root 85064 mai   28  2020 /usr/bin/chfn
 ```
 
-Les information opn bien été mise a jour:
+Les informations on bien été mis à jour:
 ```
 toto:x:1001:1000:,2,4012,6012:/home/toto:/bin/bash 
 ``` 
 ## Question 6
 
-Réponse
-Le fichier /etc/passwd ne contient aucuns mot de passes car déjà stocker des mots de passes dans un fichiers qui s'appelle passwd, et qui réunis tous les mots de passes serais relativement idiot. Les mots de passes sont stcoké dans des fichiers crypté dans le chemin est donnée dans ce fichier. Par exemple le mot de passe pour l'utilisateur toto est stocké en crypté dans /home/toto:/bin/bash.  L'avantage d'une telle méthjode et que cela permet d'augmenter le nombre de fichier a décrypter en cas d'attaque....a mon avis.
+Réponse:
+
+Le fichier /etc/passwd ne contient aucun mot de passe 
+car le fait de stocker des mots de passe dans un fichier qui s'appelle passwd, 
+et qui réunis tous les mots de passe serait relativement idiot. 
+Les mots de passe sont stocké dans des fichiers cryptés où le chemin (path) est donné dans ce fichier. 
+Par exemple le mot de passe pour l'utilisateur toto est stocké en crypté dans /home/toto:/bin/bash.  
+L'avantage d'une telle méthode est que cela permet d'augmenter le nombre de fichiers à décrypter 
+en cas d'attaque....a mon avis.
 
 ## Question 7
 
