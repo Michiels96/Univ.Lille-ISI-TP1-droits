@@ -4,7 +4,7 @@
 
 - Michiels Pierre pierre.michiels.etu@univ-lille.fr
 
-- Saulquin Clément clement.saulq1@gmail.com
+- Saulquin Clément clement.saulquin.etu@univ-lille.fr
 
 ## Question 1
 
