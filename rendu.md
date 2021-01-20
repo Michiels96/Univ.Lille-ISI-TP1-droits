@@ -107,6 +107,38 @@ en cas d'attaque....a mon avis.
 
 ## Question 7
 
+création 2 groupes:
+#sudo groupadd groupe_a
+#sudo groupadd groupe_b
+
+création compte admin, lambda_a et lambda_b
+#adduser admin
+#adduser lambda_a groupe_a
+#adduser lambda_b groupe_b
+
+(en tant qu'utilisateur admin)
+créer le dossier dir_c
+
+création des répertoires dir_a, dir_b et dir_c
+pour le dir_a
+#chmod o-rwx dir_a
+#chmod o-rwx dir_b
+#chmod g-w dir_a
+
+pour le dir_b
+#chmod o-rwx dir_b
+#chmod o-rwx dir_b
+#chmod g-w dir_b
+
+pour le dir_c
+#chmod o+x dir_c
+#chmod o-w dir_c
+
+exceptions pour l'utilisateur admin
+
+
+
+
 Mettre les scripts bash dans le repertoire *question7*.
 
 ## Question 8
