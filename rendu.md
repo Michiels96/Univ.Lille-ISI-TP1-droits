@@ -113,18 +113,28 @@ création 2 groupes:
 
 création compte admin, lambda_a et lambda_b
 #adduser admin
+#adduser lambda_a
+#adduser lambda_b
 #adduser lambda_a groupe_a
 #adduser lambda_b groupe_b
 
-(en tant qu'utilisateur admin)
+(en tant qu'utilisateur admin dans /home/admin)
 créer le dossier dir_c
+#mkdir dir_c
+
 
 création des répertoires dir_a, dir_b et dir_c
+(en tant que utilisateur lambda_a dans /home/lambda_a)
+#mkdir dir_a
+
+droits
 pour le dir_a
 #chmod o-rwx dir_a
 #chmod o-rwx dir_b
 #chmod g-w dir_a
 
+(en tant que utilisateur lambda_b dans /home/lambda_b)
+#mkdir dir_b
 pour le dir_b
 #chmod o-rwx dir_b
 #chmod o-rwx dir_b
