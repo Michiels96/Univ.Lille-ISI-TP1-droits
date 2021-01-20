@@ -115,8 +115,15 @@ création compte admin, lambda_a et lambda_b
 #adduser admin
 #adduser lambda_a
 #adduser lambda_b
-#adduser lambda_a groupe_a
-#adduser lambda_b groupe_b
+#adduser lambda_a1
+#adduser lambda_b1
+
+#usermod -g groupe_a lambda_a
+#usermod -g groupe_b lambda_b
+
+#usermod -g groupe_a lambda_a1
+#usermod -g groupe_b lambda_b1
+
 
 (en tant qu'utilisateur admin dans /home/admin)
 créer le dossier dir_c
@@ -129,23 +136,23 @@ création des répertoires dir_a, dir_b et dir_c
 
 droits
 pour le dir_a
+#chgrp groupe_a dir_a
 #chmod o-rwx dir_a
-#chmod o-rwx dir_b
-#chmod g-w dir_a
+
 
 (en tant que utilisateur lambda_b dans /home/lambda_b)
 #mkdir dir_b
 pour le dir_b
+#chgrp groupe_b dir_b
 #chmod o-rwx dir_b
-#chmod o-rwx dir_b
-#chmod g-w dir_b
+
 
 pour le dir_c
 #chmod o+x dir_c
 #chmod o-w dir_c
 
 exceptions pour l'utilisateur admin
-
+TODO
 
 
 
