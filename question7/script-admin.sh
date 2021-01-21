@@ -37,3 +37,18 @@ ls -la /home/lambda_a/dir_a/
 rm /home/lambda_a/dir_a/newFile.txt
 echo -e '\tafter delete:'
 ls -la /home/lambda_a/dir_a/
+
+
+echo -e '\n\n\tPossibilité de modifier/créer des fichiers dans tte larborescence dans dir_b:'
+
+echo -e '\n\tRENAME File'
+ls -la /home/lambda_b/dir_b/
+mv /home/lambda_b/dir_b/newFile.txt /home/lambda_b/dir_b/newNewFile.txt
+echo -e '\tafter create:'
+ls -la /home/lambda_b/dir_b/
+
+echo -e '\n\tDELETE File'
+ls -la /home/lambda_b/dir_b/
+rm /home/lambda_b/dir_b/newFile.txt
+echo -e '\tafter delete:'
+ls -la /home/lambda_b/dir_b/
