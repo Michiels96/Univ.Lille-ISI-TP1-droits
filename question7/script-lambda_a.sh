@@ -14,7 +14,7 @@ echo -e '\tOK'
 
 
 
-echo -e '\n\n\t vérification dimpossibilité à supp/renommer/modifier/créer fichiers dans dir_c:'
+echo -e '\n\n\tImpossibilité à supp/renommer/modifier/créer fichiers dans dir_c:'
 echo -e '\n\tMODIFY'
 echo -e 'content of file:'
 cat /home/admin/dir_c/doNotRenameDeleteOrModify.txt

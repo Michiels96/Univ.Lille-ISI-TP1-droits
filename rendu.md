@@ -106,48 +106,54 @@ L'avantage d'une telle méthode est que cela permet d'augmenter le nombre de fic
 en cas d'attaque....a mon avis.
 
 ## Question 7
+Oui, il est nécessaire de créer d'autres utilisateurs 
+pour créer des répertoires dans dir_a/dir_b 
+pour tester les droits entre utilisateurs du même groupe.
 
 création 2 groupes:
 #sudo groupadd groupe_a
 #sudo groupadd groupe_b
 
-création compte admin, lambda_a et lambda_b
+création compte admin, lambda_a, lambda_a1, lambda_b et lambda_b1
 #adduser admin
 #adduser lambda_a
 #adduser lambda_b
 #adduser lambda_a1
 #adduser lambda_b1
 
+Affectation des utilisateurs à leurs groupes
 #usermod -g groupe_a lambda_a
 #usermod -g groupe_b lambda_b
 
 #usermod -g groupe_a lambda_a1
 #usermod -g groupe_b lambda_b1
 
-
-(en tant qu'utilisateur admin dans /home/admin)
-créer le dossier dir_c
-#mkdir dir_c
+Permet à l'user admin d'aller effacer (ou renommer) des fichiers dans dir_a/dir_b
+#usermod -aG groupe_a admin
+#usermod -aG groupe_b admin
 
 
 création des répertoires dir_a, dir_b et dir_c
 (en tant que utilisateur lambda_a dans /home/lambda_a)
 #mkdir dir_a
 
-droits
-pour le dir_a
+droits pour dir_a
 #chgrp groupe_a dir_a
 #chmod o-rwx dir_a
 
 
 (en tant que utilisateur lambda_b dans /home/lambda_b)
 #mkdir dir_b
-pour le dir_b
+
+droits pour dir_b
 #chgrp groupe_b dir_b
 #chmod o-rwx dir_b
 
+(en tant qu'utilisateur admin dans /home/admin)
+créer le dossier dir_c
+#mkdir dir_c
 
-pour le dir_c
+droits pour dir_c
 #chmod o+x dir_c
 #chmod o-w dir_c
 
