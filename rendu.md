@@ -166,6 +166,12 @@ Mettre les scripts bash dans le repertoire *question7*.
 
 ## Question 8
 
+(en tant que user lambda_a)
+usermod -aG groupe_b lambda_a
+
+(en tant que user admin)
+chmod u+s a.out
+
 Le programme et les scripts dans le repertoire *question8*.
 
 ## Question 9
