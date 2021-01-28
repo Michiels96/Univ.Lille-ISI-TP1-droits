@@ -176,6 +176,10 @@ Le programme et les scripts dans le repertoire *question8*.
 
 ## Question 9
 
+set-user-id sur le programme pwg
+Lors de la compilation pour prendre en compte le cryptage lors de la compilation:
+'gcc pwg.c check_pass.c -lcrypt'
+
 Le programme et les scripts dans le repertoire *question9*.
 
 ## Question 10
