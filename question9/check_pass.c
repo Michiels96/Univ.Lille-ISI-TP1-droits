@@ -132,7 +132,7 @@ int createOrModifyPasswd(){
         //verify if user is present in passwd
         int userPresent = 0;
         for(int i = 0; i < nbUsers; i++){
-            printf("utilisateur %d:\n\tid: %d\n\tmdp: %s\n", i, usersDB[i].userID, usersDB[i].password);
+            //printf("utilisateur %d:\n\tid: %d\n\tmdp: %s\n", i, usersDB[i].userID, usersDB[i].password);
             if(usersDB[i].userID == getuid()){
                 printf("utilisateur présent \n");
                 userPresent = 1;
@@ -223,7 +223,7 @@ void getCryptedPass(char *givenPass){
 
 int passwordCmp(char *givenPass, char *recordedPass){
     /* Hashed form of "GNU libc manual". */
-    const char *const pass = "$1$/iSaq7rB$EoUw5jJPPvAPECNaaWzMK/";
+    //const char *const pass = "$1$/iSaq7rB$EoUw5jJPPvAPECNaaWzMK/";
 
     char *result;
     int ok;
