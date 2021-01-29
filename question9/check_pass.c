@@ -138,7 +138,7 @@ int createOrModifyPasswd(){
                 userPresent = 1;
                 printf("Entrez votre mot de passe actuel:\n");
                 char mdp[100];
-                scanf("%s", mdp);
+                scanf("%100s", mdp);
                 //vérification si les mdp sont les memes
                 //getCryptedPass(mdp);
                 if(passwordCmp(mdp, usersDB[i].password) == 0){
@@ -153,7 +153,7 @@ int createOrModifyPasswd(){
                 */
                 // maj. du nouveau mdp
                 printf("Entrez votre Nouveau mot de passe:\n");
-                scanf("%s", mdp);
+                scanf("%100s", mdp);
                 strcpy(usersDB[i].password, mdp);
 
                 //char *cryptedPass;
@@ -176,7 +176,7 @@ int createOrModifyPasswd(){
             else {
                 printf("Entrez votre nouveau mot de passe:\n");
                 char mdp[100];
-                scanf("%s", mdp);
+                scanf("%100s", mdp);
                 getCryptedPass(mdp);
                 char bufferId[80];
                 sprintf(bufferId, "%d", getuid());

@@ -18,7 +18,7 @@ int main(int argc, char *argv[]){
         printf("autorisé à supprimer\n");
         printf("Entrez votre mot de passe:\n");
         char mdp[100];
-        scanf("%s", mdp);
+        scanf("%100s", mdp);
         //printf("mdp entré: %s\n", mdp);
         //printf("longueur %ld\n", strlen(mdp));
 
